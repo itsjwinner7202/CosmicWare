@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d3eyimnaj6got"]
+
+[ext_resource type="Texture2D" uid="uid://d1f7ed7w0e55m" path="res://Assets/space bg.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://dhn1ftfm0bdiu" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1901286860]
+script = ExtResource("1_p3fck")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2005179398]
+offset_right = 4100.0
+offset_bottom = 2000.0
+scale = Vector2(0.27999932, 0.31999952)
+texture = ExtResource("1_klylv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1775495461]
+clip_contents = false
+offset_left = 251.0
+offset_top = 108.0
+offset_right = 935.0
+offset_bottom = 250.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "CosmicWare"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1205285643]
+offset_left = 454.00003
+offset_top = 268.0
+offset_right = 626.0
+offset_bottom = 426.0
+scale = Vector2(1.4800011, 1.48)
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=138843719]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=126390007]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1250291169]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
