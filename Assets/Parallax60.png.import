@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byhyvoo8wguy"
-path="res://.godot/imported/space-tiled background-256x256 by alpha rats.png-97516e7e2520f60f450699183af7f595.ctex"
+uid="uid://bmjnvq70i74kr"
+path="res://.godot/imported/Parallax60.png-e9d401be5544512f99d55aec7f1d37cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/space-tiled background-256x256 by alpha rats.png"
-dest_files=["res://.godot/imported/space-tiled background-256x256 by alpha rats.png-97516e7e2520f60f450699183af7f595.ctex"]
+source_file="res://Assets/Parallax60.png"
+dest_files=["res://.godot/imported/Parallax60.png-e9d401be5544512f99d55aec7f1d37cd.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkxvabmveoh5w"]
 
 [ext_resource type="Script" uid="uid://c365tgdvtn7gd" path="res://Scenes/minigame_1.gd" id="1_0uv5o"]
-[ext_resource type="Texture2D" uid="uid://byhyvoo8wguy" path="res://Assets/space-tiled background-256x256 by alpha rats.png" id="1_enoba"]
+[ext_resource type="Texture2D" uid="uid://bmjnvq70i74kr" path="res://Assets/Parallax60.png" id="2_0uv5o"]
 [ext_resource type="PackedScene" uid="uid://d2bn4r30ch1og" path="res://Scenes/player.tscn" id="2_11mgy"]
 [ext_resource type="Texture2D" uid="uid://cci83h0k00ee" path="res://Assets/star.png" id="3_f6tb2"]
 [ext_resource type="Script" uid="uid://cr747svv1chng" path="res://Scenes/star.gd" id="3_o6yob"]
@@ -62,7 +62,7 @@ script = ExtResource("1_0uv5o")
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=37599865]
 offset_right = 1152.0
 offset_bottom = 587.0
-texture = ExtResource("1_enoba")
+texture = ExtResource("2_0uv5o")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=921620368]
 
@@ -70,7 +70,7 @@ texture = ExtResource("1_enoba")
 offset_top = 587.0
 offset_right = 1152.0
 offset_bottom = 647.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=288345133]
 position = Vector2(576, 617.5)
@@ -84,7 +84,7 @@ offset_left = 640.0
 offset_top = 712.0
 offset_right = 928.0
 offset_bottom = 760.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1717922279]
 position = Vector2(784, 736)
@@ -98,8 +98,7 @@ offset_left = 648.0
 offset_top = 704.0
 offset_right = 936.0
 offset_bottom = 752.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
-metadata/_edit_use_anchors_ = true
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=308248157]
 position = Vector2(792, 728)
@@ -113,8 +112,7 @@ offset_left = 216.0
 offset_top = 760.0
 offset_right = 504.0
 offset_bottom = 808.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
-metadata/_edit_use_anchors_ = true
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=251512994]
 position = Vector2(360, 784)
@@ -128,8 +126,7 @@ offset_left = 704.0
 offset_top = 696.0
 offset_right = 992.0
 offset_bottom = 744.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
-metadata/_edit_use_anchors_ = true
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=2073810710]
 position = Vector2(848, 720)
@@ -143,8 +140,7 @@ offset_left = 1064.0
 offset_top = 696.0
 offset_right = 1352.0
 offset_bottom = 744.0
-color = Color(0.16015172, 6.232932e-05, 0.554567, 1)
-metadata/_edit_use_anchors_ = true
+color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=213006626]
 position = Vector2(1208, 720)
@@ -220,3 +216,7 @@ shape = SubResource("CircleShape2D_pw4li")
 
 [node name="ThemedTimer" parent="." unique_id=2010459781 instance=ExtResource("5_5txvl")]
 position = Vector2(-952, -24)
+
+[connection signal="garlic_collected" from="Star" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Star2" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Star3" to="." method="garlic_collect"]
