@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d2bn4r30ch1og"]
+
+[ext_resource type="Script" uid="uid://f2fw2a6ivfl1" path="res://player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://csfkq2p57eem8" path="res://Assets/Astronaut.png" id="2_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh3qq"]
+size = Vector2(79, 168)
+
+[node name="Player" type="CharacterBody2D" unique_id=1411022588]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2072849236]
+position = Vector2(1040, 507.00003)
+scale = Vector2(3.9605265, 3.358696)
+texture = ExtResource("2_6t5aa")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=477900904]
+position = Vector2(1039.5, 505)
+shape = SubResource("RectangleShape2D_rh3qq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1092728990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=425241605]
+position = Vector2(1039.5, 505)
+shape = SubResource("RectangleShape2D_rh3qq")

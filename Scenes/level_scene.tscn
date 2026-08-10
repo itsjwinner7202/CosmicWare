@@ -1,3 +1,72 @@
 [gd_scene format=3 uid="uid://de1n8swbv8usf"]
 
+[ext_resource type="Script" uid="uid://dhbsuie1wc6lf" path="res://Scenes/level_scene.gd" id="1_2fcgv"]
+[ext_resource type="Texture2D" uid="uid://d2ib55o7f71lp" path="res://Assets/back.png" id="1_cn3xy"]
+[ext_resource type="Texture2D" uid="uid://csfkq2p57eem8" path="res://Assets/Astronaut.png" id="2_c7xwe"]
+[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/coracaozinho-para-o-luiz-otavio.svg" id="4_qnqh0"]
+
 [node name="level_scene" type="Node2D" unique_id=1379123687]
+script = ExtResource("1_2fcgv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1442682557]
+offset_right = 2048.0
+offset_bottom = 1536.0
+scale = Vector2(0.5600004, 0.42550102)
+texture = ExtResource("1_cn3xy")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1034193600]
+offset_left = 86.000015
+offset_top = 367.0
+offset_right = 128.58354
+offset_bottom = 406.8435
+rotation = 0.47038656
+scale = Vector2(3.4477677, 7.9359646)
+texture = ExtResource("2_c7xwe")
+expand_mode = 1
+
+[node name="LivesContainer" type="HBoxContainer" parent="." unique_id=1562431660]
+offset_left = -181.99997
+offset_top = 123.0
+offset_right = 591.0
+offset_bottom = 262.0
+scale = Vector2(1.9648257, 1.0000415)
+alignment = 1
+
+[node name="Life" type="TextureRect" parent="LivesContainer" unique_id=6231570]
+layout_mode = 2
+texture = ExtResource("4_qnqh0")
+
+[node name="Life2" type="TextureRect" parent="LivesContainer" unique_id=1867176875]
+layout_mode = 2
+texture = ExtResource("4_qnqh0")
+
+[node name="Life3" type="TextureRect" parent="LivesContainer" unique_id=1948575318]
+layout_mode = 2
+texture = ExtResource("4_qnqh0")
+
+[node name="Life4" type="TextureRect" parent="LivesContainer" unique_id=1560994001]
+layout_mode = 2
+texture = ExtResource("4_qnqh0")
+
+[node name="Life5" type="TextureRect" parent="LivesContainer" unique_id=1294513969]
+layout_mode = 2
+texture = ExtResource("4_qnqh0")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=437154372]
+offset_left = 484.0
+offset_top = 323.0
+offset_right = 666.0
+offset_bottom = 388.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Level #"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=389712933]
+offset_left = 528.0
+offset_top = 494.0
+offset_right = 611.0
+offset_bottom = 553.0
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
+horizontal_alignment = 1
