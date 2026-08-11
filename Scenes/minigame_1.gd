@@ -34,4 +34,5 @@ func _process(delta: float) -> void: # running every frame brochacho
 
 func garlic_collect() -> void: # cool function that you connect to those garlics
 	garlic_collected = garlic_collected +1
+	AudioStreamWAV.load_from_file("res://Assets/coin.wav")
 	return

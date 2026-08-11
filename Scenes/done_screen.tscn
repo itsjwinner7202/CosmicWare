@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b30nqjgw3rx2k"]
+
+[ext_resource type="Texture2D" uid="uid://d2ib55o7f71lp" path="res://Assets/back.png" id="1_1q1k2"]
+[ext_resource type="Script" uid="uid://bx6bg5qdlmpua" path="res://Scenes/done_screen.gd" id="1_8rpo2"]
+[ext_resource type="Texture2D" uid="uid://csfkq2p57eem8" path="res://Assets/Astronaut.png" id="2_8rpo2"]
+[ext_resource type="Texture2D" uid="uid://cci83h0k00ee" path="res://Assets/star.png" id="3_5u8ma"]
+[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/coracaozinho-para-o-luiz-otavio.svg" id="5_5u8ma"]
+
+[node name="done_screen" type="Node2D" unique_id=195697876]
+script = ExtResource("1_8rpo2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1397264230]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_1q1k2")
+expand_mode = 1
+
+[node name="splash" type="RichTextLabel" parent="." unique_id=211129164]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 960.0
+offset_bottom = 328.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 100
+text = "You've Won!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="toast" type="RichTextLabel" parent="." unique_id=937391698]
+offset_left = 192.0
+offset_top = 328.0
+offset_right = 960.0
+offset_bottom = 464.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 50
+text = "That was hard, wasnt it?"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Astronaut" type="Sprite2D" parent="." unique_id=91112275]
+position = Vector2(64, 568.00006)
+rotation = 0.5235988
+scale = Vector2(6.144736, 5.2934794)
+texture = ExtResource("2_8rpo2")
+
+[node name="Star" type="Sprite2D" parent="." unique_id=2099933981]
+position = Vector2(1064, 87.99991)
+rotation = -0.7853982
+scale = Vector2(0.7258065, 0.7162162)
+texture = ExtResource("3_5u8ma")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1544712772]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.87500006
+offset_left = 440.0
+offset_top = 472.0
+offset_right = 704.0
+offset_bottom = 536.0
+color = Color(0.050980393, 0, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1782063639]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 472.0
+offset_right = 704.0
+offset_bottom = 536.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 34
+text = "Main Menu"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1094739957]
+offset_left = 440.0
+offset_top = 472.0
+offset_right = 704.0
+offset_bottom = 536.0
+
+[node name="LivesContainer" type="HBoxContainer" parent="." unique_id=850092992]
+offset_left = -184.0
+offset_top = 48.0
+offset_right = 589.0
+offset_bottom = 187.0
+scale = Vector2(1.9648257, 1.0000415)
+alignment = 1
+
+[node name="Life" type="TextureRect" parent="LivesContainer" unique_id=1112673814]
+layout_mode = 2
+texture = ExtResource("5_5u8ma")
+
+[node name="Life2" type="TextureRect" parent="LivesContainer" unique_id=1094232540]
+layout_mode = 2
+texture = ExtResource("5_5u8ma")
+
+[node name="Life3" type="TextureRect" parent="LivesContainer" unique_id=1973650594]
+layout_mode = 2
+texture = ExtResource("5_5u8ma")
+
+[node name="Life4" type="TextureRect" parent="LivesContainer" unique_id=1804349988]
+layout_mode = 2
+texture = ExtResource("5_5u8ma")
+
+[node name="Life5" type="TextureRect" parent="LivesContainer" unique_id=357543628]
+layout_mode = 2
+texture = ExtResource("5_5u8ma")
+
+[connection signal="pressed" from="TextureButton" to="." method="mainpressed"]
