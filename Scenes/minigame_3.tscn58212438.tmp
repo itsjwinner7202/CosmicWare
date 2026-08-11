@@ -1,33 +1,30 @@
 [gd_scene format=3 uid="uid://cnh3w5y76qdkc"]
 
 [ext_resource type="Texture2D" uid="uid://dxvp810g1a162" path="res://Assets/blue.png" id="1_asmx3"]
-[ext_resource type="Script" uid="uid://fkc4i3gb6ab8" path="res://Scenes/minigame_3.gd" id="1_kvuqf"]
 [ext_resource type="Texture2D" uid="uid://d1nrqlaq5gu2r" path="res://Assets/playerShip3_red.png" id="2_h40nw"]
-[ext_resource type="Shader" uid="uid://obhmage0u332" path="res://Scenes/minigame_3.gdshader" id="2_s0j2t"]
-[ext_resource type="Script" uid="uid://blx5nec14rdrx" path="res://Scenes/meteor.gd" id="3_4cfv6"]
+[ext_resource type="Script" uid="uid://blx5nec14rdrx" path="res://Scenes/area_2d.gd" id="3_4cfv6"]
 [ext_resource type="Texture2D" uid="uid://bo5pcmrjhul30" path="res://Assets/meteorGrey_big1.png" id="3_ihkhm"]
 [ext_resource type="Texture2D" uid="uid://c1qoes5fv13n7" path="res://Assets/meteorGrey_med1.png" id="4_we0jk"]
+[ext_resource type="Script" uid="uid://cfawsrojxx0uk" path="res://Scenes/area_2d_2.gd" id="5_mu65p"]
+[ext_resource type="Script" uid="uid://c41ropoy6bar7" path="res://Scenes/area_2d_3.gd" id="6_s0j2t"]
 [ext_resource type="Texture2D" uid="uid://cb2lnetskunbk" path="res://Assets/meteorGrey_big2.png" id="6_y6mal"]
 [ext_resource type="PackedScene" uid="uid://3fxfmyafkw1a" path="res://Scenes/ship.tscn" id="7_rpf30"]
 [ext_resource type="Script" uid="uid://8uu1881nhr5" path="res://ship.gd" id="8_4cfv6"]
+[ext_resource type="Script" uid="uid://nf6lsonqei72" path="res://Scenes/area_2d_4.gd" id="8_5plo5"]
 [ext_resource type="Texture2D" uid="uid://bje0bs0dcfri5" path="res://Assets/fire03.png" id="8_y6mal"]
-[ext_resource type="FontFile" uid="uid://r63unll5ydbs" path="res://Assets/kenvector_future.ttf" id="12_5plo5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mu65p"]
-shader = ExtResource("2_s0j2t")
-shader_parameter/scroll_speed = Vector2(0, 0.2)
+[ext_resource type="Script" uid="uid://cs8hgrm4jim38" path="res://Scenes/area_2d_5.gd" id="10_1kvof"]
+[ext_resource type="Script" uid="uid://d1h752nmc1h5d" path="res://Scenes/area_2d_6.gd" id="11_7u6rh"]
+[ext_resource type="Script" uid="uid://cj4xlvb66ivdt" path="res://Scenes/area_2d_7.gd" id="12_75k32"]
+[ext_resource type="Script" uid="uid://tgh7d5t2h5uh" path="res://Scenes/area_2d_8.gd" id="13_f07lr"]
 
 [node name="minigame_3" type="Node2D" unique_id=1300563519]
-script = ExtResource("1_kvuqf")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1595918708]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_mu65p")
+offset_top = -2.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 646.0
 texture = ExtResource("1_asmx3")
 expand_mode = 1
-stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1878967374]
 offset_left = 40.000004
@@ -49,7 +46,6 @@ layout_mode = 2
 texture = ExtResource("2_h40nw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1187693439]
-position = Vector2(14, 0)
 script = ExtResource("3_4cfv6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2010217751]
@@ -62,7 +58,7 @@ texture = ExtResource("3_ihkhm")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1518146880]
 position = Vector2(282, -348)
-script = ExtResource("3_4cfv6")
+script = ExtResource("5_mu65p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" unique_id=1488622694]
 position = Vector2(128, 523)
@@ -73,8 +69,8 @@ position = Vector2(128, 523)
 texture = ExtResource("3_ihkhm")
 
 [node name="Area2D3" type="Area2D" parent="." unique_id=765903024]
-position = Vector2(986, 441)
-script = ExtResource("3_4cfv6")
+position = Vector2(843, 522)
+script = ExtResource("6_s0j2t")
 
 [node name="MeteorGreyBig3" type="Sprite2D" parent="Area2D3" unique_id=140494129]
 texture = ExtResource("6_y6mal")
@@ -83,7 +79,7 @@ texture = ExtResource("6_y6mal")
 polygon = PackedVector2Array(-41, -42, 6, -50, 60, -31, 61, -28, 48, 18, -8, 34, -25, 50, -55, 28, -61, -2, -61, -7)
 
 [node name="Area2D4" type="Area2D" parent="." unique_id=1092918990]
-script = ExtResource("3_4cfv6")
+script = ExtResource("8_5plo5")
 
 [node name="MeteorGreyMed1" type="Sprite2D" parent="Area2D4" unique_id=1491044103]
 position = Vector2(826, 365)
@@ -95,7 +91,7 @@ polygon = PackedVector2Array(-11, -20, 17, -19, 19, -18, 22, 2, 23, 9, 1, 24, -1
 
 [node name="Area2D5" type="Area2D" parent="." unique_id=2044856799]
 position = Vector2(-843, -73)
-script = ExtResource("3_4cfv6")
+script = ExtResource("10_1kvof")
 
 [node name="MeteorGreyMed1" type="Sprite2D" parent="Area2D5" unique_id=922116764]
 position = Vector2(1002, 342)
@@ -106,8 +102,8 @@ position = Vector2(1002, 341)
 polygon = PackedVector2Array(-11, -20, 17, -19, 19, -18, 22, 2, 23, 9, 1, 24, -16, 18, -24, -4, -12, -20)
 
 [node name="Area2D6" type="Area2D" parent="." unique_id=1062833902]
-position = Vector2(-709, 93)
-script = ExtResource("3_4cfv6")
+position = Vector2(-646, 133)
+script = ExtResource("11_7u6rh")
 
 [node name="MeteorGreyMed1" type="Sprite2D" parent="Area2D6" unique_id=566967122]
 position = Vector2(1002, 342)
@@ -118,8 +114,8 @@ position = Vector2(1002, 341)
 polygon = PackedVector2Array(-11, -20, 17, -19, 19, -18, 22, 2, 23, 9, 1, 24, -16, 18, -24, -4, -12, -20)
 
 [node name="Area2D7" type="Area2D" parent="." unique_id=1797130796]
-position = Vector2(-411, 0)
-script = ExtResource("3_4cfv6")
+position = Vector2(-23, -223)
+script = ExtResource("12_75k32")
 
 [node name="MeteorGreyMed1" type="Sprite2D" parent="Area2D7" unique_id=631617479]
 position = Vector2(1002, 342)
@@ -130,8 +126,8 @@ position = Vector2(1002, 341)
 polygon = PackedVector2Array(-11, -20, 17, -19, 19, -18, 22, 2, 23, 9, 1, 24, -16, 18, -24, -4, -12, -20)
 
 [node name="Area2D8" type="Area2D" parent="." unique_id=1298955488]
-position = Vector2(-280, -214)
-script = ExtResource("3_4cfv6")
+position = Vector2(-325, -134)
+script = ExtResource("13_f07lr")
 
 [node name="MeteorGreyMed1" type="Sprite2D" parent="Area2D8" unique_id=672448452]
 position = Vector2(1002, 342)
@@ -142,49 +138,12 @@ position = Vector2(1002, 341)
 polygon = PackedVector2Array(-11, -20, 17, -19, 19, -18, 22, 2, 23, 9, 1, 24, -16, 18, -24, -4, -12, -20)
 
 [node name="Player" parent="." unique_id=1411022588 instance=ExtResource("7_rpf30")]
-position = Vector2(-452, 65)
+position = Vector2(-452, 40)
 script = ExtResource("8_4cfv6")
 
-[node name="Area2D2" type="Area2D" parent="Player" unique_id=1334427715]
-
-[node name="Fire03" type="Sprite2D" parent="Player/Area2D2" unique_id=750551058]
-position = Vector2(1039, 265.00003)
+[node name="Fire03" type="Sprite2D" parent="Player" unique_id=750551058]
+visible = false
+position = Vector2(1040, 257)
 rotation = 3.1415925
-scale = Vector2(1.7688923, 12.000001)
+scale = Vector2(4.785714, 12.000001)
 texture = ExtResource("8_y6mal")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Area2D2" unique_id=332178989]
-position = Vector2(631, 14.999999)
-scale = Vector2(0.3925177, 1)
-polygon = PackedVector2Array(1032, 457, 1047, 457, 1055.9977, 347.09747, 1075, 115, 1056, 67, 1027, 69, 1006.3241, 114.99999, 1007, 196)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=349009837]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1000756804]
-offset_left = 997.0
-offset_top = 30.0
-offset_right = 1092.0
-offset_bottom = 140.0
-theme_override_fonts/normal_font = ExtResource("12_5plo5")
-theme_override_font_sizes/normal_font_size = 80
-text = "8"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="meteor_bump" from="Area2D" to="." method="_on_area_2d_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D" to="." method="_on_area_2d_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D2" to="." method="_on_area_2d_2_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D2" to="." method="_on_area_2d_2_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D3" to="." method="_on_area_2d_3_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D3" to="." method="_on_area_2d_3_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D4" to="." method="_on_area_2d_4_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D4" to="." method="_on_area_2d_4_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D5" to="." method="_on_area_2d_5_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D5" to="." method="_on_area_2d_5_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D6" to="." method="_on_area_2d_6_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D6" to="." method="_on_area_2d_6_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D7" to="." method="_on_area_2d_7_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D7" to="." method="_on_area_2d_7_ship_bumped"]
-[connection signal="meteor_bump" from="Area2D8" to="." method="_on_area_2d_8_meteor_bump"]
-[connection signal="ship_bumped" from="Area2D8" to="." method="_on_area_2d_8_ship_bumped"]

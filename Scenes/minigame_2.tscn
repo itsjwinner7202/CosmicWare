@@ -87,6 +87,8 @@ script = ExtResource("3_rfxq2")
 [node name="timer_screen" parent="." unique_id=2010459781 instance=ExtResource("4_dfb65")]
 position = Vector2(19, -9)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1580824103]
+
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
 [connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
