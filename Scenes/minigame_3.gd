@@ -10,18 +10,30 @@ extends Node2D
 
 @onready var meteors = [$Area2D, $Area2D2, $Area2D3, $Area2D4, $Area2D5, $Area2D6, $Area2D7, $Area2D8]
 var meteor_speeds = {}
-var meteor_speed_min = 220
-var meteor_speed_max = 320
 var spawn_x_min = -100
 var spawn_x_max = 600
 var spawn_y_min = -1900
 var spawn_y_max = -880
 var screen_size: Vector2
 var spawning_active = false
+@onready var meteor_speed_min = 0
+@onready var meteor_speed_max = 0
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	for m in meteors:
+		match Global.difficulty_index:
+			0:
+				meteor_speed_min = 220
+				meteor_speed_max = 320
+				
+			1:
+				meteor_speed_min = 320
+				meteor_speed_max = 420
+		
+			2:
+				meteor_speed_min = 420
+				meteor_speed_max = 520
 		m.visible = false
 		m.position.x = randf_range(spawn_x_min, spawn_x_max)
 		m.position.y = randf_range(spawn_y_min, spawn_y_max)

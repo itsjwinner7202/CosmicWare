@@ -13,10 +13,24 @@ func _ready() -> void:
 		#function from it that was created in it's script and use `await` to 
 		# tell the script to wait for a signal, or for when a function finshes
 
+	match Global.difficulty_index:
+		0:
+			await themed_timer.Timer(10.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
+				
+		1:
+			await themed_timer.Timer(7.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
+		
+		2:
+			await themed_timer.Timer(5.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
+			
+		
 
-	await themed_timer.Timer(10.0) #accessing a function from this node
-	#after this is compeleted...
-	timer_end = true # now we're saying "oh ye you ran out of time"
 
 func _process(delta: float) -> void: # running every frame brochacho
 	

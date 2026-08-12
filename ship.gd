@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 300.0
+const SPEED = 500
 
 @onready var fire: Area2D = $Area2D2
 

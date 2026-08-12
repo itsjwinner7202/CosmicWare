@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c3r8ab6b4kiec"]
+
+[ext_resource type="Script" uid="uid://vn0k5o060bti" path="res://settings.gd" id="1_3ykye"]
+[ext_resource type="Texture2D" uid="uid://d2ib55o7f71lp" path="res://Assets/back.png" id="1_x2hje"]
+[ext_resource type="FontFile" uid="uid://r63unll5ydbs" path="res://Assets/kenvector_future.ttf" id="2_nkug2"]
+
+[node name="settings" type="Node2D" unique_id=1111380179]
+script = ExtResource("1_3ykye")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1602991139]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_x2hje")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=362643516]
+offset_top = 64.0
+offset_right = 1152.0
+offset_bottom = 128.0
+theme_override_fonts/normal_font = ExtResource("2_nkug2")
+theme_override_font_sizes/normal_font_size = 50
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1103486325]
+offset_left = 64.0
+offset_top = 168.0
+offset_right = 320.0
+offset_bottom = 216.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 30
+text = "Difficulty"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="OptionButton" parent="." unique_id=2076741365]
+offset_left = 816.0
+offset_top = 168.0
+offset_right = 1024.0
+offset_bottom = 216.0
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=199603170]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.87500006
+offset_left = 440.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+color = Color(0.050980393, 0, 0.30980393, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1648215823]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 34
+text = "Main Menu"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=106664064]
+offset_left = 440.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+
+[connection signal="item_selected" from="Difficulty" to="." method="_on_difficulty_item_selected"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -5,9 +5,21 @@ var buttons_pressed := 0
 var timer_end = false
 
 func _ready() -> void:
-	await themed_timer.Timer(4.0)
-	#after this is completed...
-	timer_end = true 
+	match Global.difficulty_index:
+		0:
+			await themed_timer.Timer(4.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
+				
+		1:
+			await themed_timer.Timer(3.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
+		
+		2:
+			await themed_timer.Timer(2.0) #accessing a function from this node
+			#after this is compeleted...
+			timer_end = true # now we're saying "oh ye you ran out of time"
 
 
 func _process(delta: float) -> void:

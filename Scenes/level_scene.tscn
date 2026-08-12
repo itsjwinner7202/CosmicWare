@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhbsuie1wc6lf" path="res://Scenes/level_scene.gd" id="1_2fcgv"]
 [ext_resource type="Texture2D" uid="uid://d2ib55o7f71lp" path="res://Assets/back.png" id="1_cn3xy"]
 [ext_resource type="Texture2D" uid="uid://csfkq2p57eem8" path="res://Assets/Astronaut.png" id="2_c7xwe"]
-[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/coracaozinho-para-o-luiz-otavio.svg" id="4_qnqh0"]
+[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/heart.svg" id="4_qnqh0"]
 
 [node name="level_scene" type="Node2D" unique_id=1379123687]
 script = ExtResource("1_2fcgv")
@@ -13,6 +13,8 @@ offset_right = 2048.0
 offset_bottom = 1536.0
 scale = Vector2(0.5600004, 0.42550102)
 texture = ExtResource("1_cn3xy")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1034193600]
 offset_left = 86.000015

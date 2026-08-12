@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bx6bg5qdlmpua" path="res://Scenes/done_screen.gd" id="1_8rpo2"]
 [ext_resource type="Texture2D" uid="uid://csfkq2p57eem8" path="res://Assets/Astronaut.png" id="2_8rpo2"]
 [ext_resource type="Texture2D" uid="uid://cci83h0k00ee" path="res://Assets/star.png" id="3_5u8ma"]
-[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/coracaozinho-para-o-luiz-otavio.svg" id="5_5u8ma"]
+[ext_resource type="Texture2D" uid="uid://cqyi6h2f4boev" path="res://Assets/heart.svg" id="5_5u8ma"]
 
 [node name="done_screen" type="Node2D" unique_id=195697876]
 script = ExtResource("1_8rpo2")
@@ -14,6 +14,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_1q1k2")
 expand_mode = 1
+stretch_mode = 1
 
 [node name="splash" type="RichTextLabel" parent="." unique_id=211129164]
 offset_left = 192.0
