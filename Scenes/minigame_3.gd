@@ -85,6 +85,9 @@ func handle_bump() -> void:
 	for m in meteors:
 		reset_meteor(m)
 	ship.position = Vector2(-452, 65)
+	for m in meteors:
+		m.visible = true
+	spawning_active = true
 
 	await get_tree().create_timer(0.2).timeout
 	is_hit = false

@@ -15,7 +15,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mu65p"]
 shader = ExtResource("2_s0j2t")
-shader_parameter/scroll_speed = Vector2(0, 0.2)
+shader_parameter/scroll_speed = Vector2(0, 0.3)
 
 [node name="minigame_3" type="Node2D" unique_id=1300563519]
 script = ExtResource("1_kvuqf")

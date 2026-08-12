@@ -2,28 +2,30 @@
 
 [ext_resource type="Texture2D" uid="uid://d1f7ed7w0e55m" path="res://Assets/space bg.png" id="1_klylv"]
 [ext_resource type="Script" uid="uid://dhn1ftfm0bdiu" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+[ext_resource type="FontFile" uid="uid://r63unll5ydbs" path="res://Assets/kenvector_future.ttf" id="3_4gxqj"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1901286860]
 script = ExtResource("1_p3fck")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2005179398]
-offset_right = 4100.0
-offset_bottom = 2000.0
+offset_right = 4114.2954
+offset_bottom = 2025.0029
 scale = Vector2(0.27999932, 0.31999952)
 texture = ExtResource("1_klylv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1775495461]
 clip_contents = false
-offset_left = 251.0
-offset_top = 108.0
-offset_right = 935.0
-offset_bottom = 250.0
+offset_top = 119.0
+offset_right = 1152.0
+offset_bottom = 261.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("3_4gxqj")
 theme_override_font_sizes/normal_font_size = 108
 text = "CosmicWare"
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1205285643]
 offset_left = 454.00003

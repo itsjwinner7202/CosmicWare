@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://dtpe076g3u3t5"]
 
-[ext_resource type="Texture2D" uid="uid://bmjnvq70i74kr" path="res://Assets/Parallax60.png" id="1_l4g8r"]
 [ext_resource type="Script" uid="uid://2gmvadpyatrp" path="res://Scenes/minigame_2.gd" id="1_rfxq2"]
 [ext_resource type="Texture2D" uid="uid://cci83h0k00ee" path="res://Assets/star.png" id="2_dfb65"]
+[ext_resource type="Shader" uid="uid://covr76wvput5w" path="res://Scenes/minigame_2.gdshader" id="2_mmgun"]
+[ext_resource type="Texture2D" uid="uid://bhjkxi1m2rn14" path="res://Assets/darkPurple.png" id="3_h684j"]
 [ext_resource type="Script" uid="uid://uedm6y0m1naw" path="res://Scenes/button_1.gd" id="3_rfxq2"]
 [ext_resource type="PackedScene" uid="uid://gbu27cspsktj" path="res://Scenes/timer_screen.tscn" id="4_dfb65"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmcek"]
+shader = ExtResource("2_mmgun")
+shader_parameter/scroll_speed = Vector2(1, 1)
 
 [node name="minigame_2" type="Node2D" unique_id=204709481]
 script = ExtResource("1_rfxq2")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=349297631]
+material = SubResource("ShaderMaterial_jmcek")
 offset_right = 1154.0
 offset_bottom = 644.0
-texture = ExtResource("1_l4g8r")
+texture = ExtResource("3_h684j")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Button_1" type="TextureButton" parent="." unique_id=1413619007]
 offset_left = 85.0
@@ -29,6 +37,16 @@ offset_left = 714.0
 offset_top = 48.0
 offset_right = 834.0
 offset_bottom = 168.0
+texture_normal = ExtResource("2_dfb65")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_rfxq2")
+
+[node name="Button_8" type="TextureButton" parent="." unique_id=485968259]
+offset_left = 552.0
+offset_top = 199.0
+offset_right = 672.0
+offset_bottom = 319.0
 texture_normal = ExtResource("2_dfb65")
 ignore_texture_size = true
 stretch_mode = 0
@@ -91,6 +109,7 @@ position = Vector2(19, -9)
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_8" to="Button_8" method="_on_pressed"]
 [connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
 [connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]
 [connection signal="pressed" from="Button_5" to="Button_5" method="_on_pressed"]

@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://dkxvabmveoh5w"]
 
 [ext_resource type="Script" uid="uid://c365tgdvtn7gd" path="res://Scenes/minigame_1.gd" id="1_0uv5o"]
-[ext_resource type="Texture2D" uid="uid://bmjnvq70i74kr" path="res://Assets/Parallax60.png" id="2_0uv5o"]
 [ext_resource type="PackedScene" uid="uid://d2bn4r30ch1og" path="res://Scenes/player.tscn" id="2_11mgy"]
+[ext_resource type="Shader" uid="uid://dnkoxw1k5r2y0" path="res://Scenes/minigame_1.gdshader" id="2_jmcek"]
+[ext_resource type="Texture2D" uid="uid://bhjkxi1m2rn14" path="res://Assets/darkPurple.png" id="2_ojqsy"]
 [ext_resource type="Texture2D" uid="uid://cci83h0k00ee" path="res://Assets/star.png" id="3_f6tb2"]
 [ext_resource type="Script" uid="uid://cr747svv1chng" path="res://Scenes/star.gd" id="3_o6yob"]
+[ext_resource type="Texture2D" uid="uid://bikat8yjch0l7" path="res://Assets/platform.png" id="4_ne1wf"]
 [ext_resource type="PackedScene" uid="uid://gbu27cspsktj" path="res://Scenes/timer_screen.tscn" id="5_5txvl"]
 [ext_resource type="AudioStream" uid="uid://c0rjm16wjdtpi" path="res://Assets/coin.wav" id="7_ojqsy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ne1wf"]
+shader = ExtResource("2_jmcek")
+shader_parameter/scroll_speed = Vector2(0.3, 0.3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rh3qq"]
 size = Vector2(1152, 61)
@@ -58,20 +64,21 @@ radius = 32.0
 [node name="Minigame_1" type="Node2D" unique_id=1438966092]
 script = ExtResource("1_0uv5o")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=236205456]
-
-[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=37599865]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=37599865]
+material = SubResource("ShaderMaterial_ne1wf")
 offset_right = 1152.0
 offset_bottom = 587.0
-texture = ExtResource("2_0uv5o")
+texture = ExtResource("2_ojqsy")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=921620368]
 
-[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=2139920435]
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=547832312]
 offset_top = 587.0
 offset_right = 1152.0
 offset_bottom = 647.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+color = Color(0.09803922, 0.16862746, 0.25490198, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=288345133]
 position = Vector2(576, 617.5)
@@ -80,12 +87,12 @@ shape = SubResource("RectangleShape2D_rh3qq")
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=198109048]
 position = Vector2(0, -248)
 
-[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=3061644]
+[node name="ColorRect" type="TextureRect" parent="Platform2" unique_id=1203406491]
 offset_left = 640.0
 offset_top = 712.0
 offset_right = 928.0
 offset_bottom = 760.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+texture = ExtResource("4_ne1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1717922279]
 position = Vector2(784, 736)
@@ -94,12 +101,12 @@ shape = SubResource("RectangleShape2D_pw4li")
 [node name="Platform3" type="StaticBody2D" parent="." unique_id=196542539]
 position = Vector2(-360, -312)
 
-[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1445143646]
+[node name="ColorRect" type="TextureRect" parent="Platform3" unique_id=2138744463]
 offset_left = 648.0
 offset_top = 704.0
 offset_right = 936.0
 offset_bottom = 752.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+texture = ExtResource("4_ne1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=308248157]
 position = Vector2(792, 728)
@@ -108,12 +115,12 @@ shape = SubResource("RectangleShape2D_pw4li")
 [node name="Platform4" type="StaticBody2D" parent="." unique_id=1469768321]
 position = Vector2(-160, -496)
 
-[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=580274307]
+[node name="ColorRect" type="TextureRect" parent="Platform4" unique_id=398489855]
 offset_left = 216.0
 offset_top = 760.0
 offset_right = 504.0
 offset_bottom = 808.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+texture = ExtResource("4_ne1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=251512994]
 position = Vector2(360, 784)
@@ -122,12 +129,12 @@ shape = SubResource("RectangleShape2D_pw4li")
 [node name="Platform5" type="StaticBody2D" parent="." unique_id=999228340]
 position = Vector2(-256, -552)
 
-[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=844659878]
+[node name="ColorRect" type="TextureRect" parent="Platform5" unique_id=1946730215]
 offset_left = 704.0
 offset_top = 696.0
 offset_right = 992.0
 offset_bottom = 744.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+texture = ExtResource("4_ne1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=2073810710]
 position = Vector2(848, 720)
@@ -136,12 +143,12 @@ shape = SubResource("RectangleShape2D_pw4li")
 [node name="Platform6" type="StaticBody2D" parent="." unique_id=1493117663]
 position = Vector2(-256, -552)
 
-[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=871150233]
+[node name="ColorRect" type="TextureRect" parent="Platform6" unique_id=1872941270]
 offset_left = 1064.0
 offset_top = 696.0
 offset_right = 1352.0
 offset_bottom = 744.0
-color = Color(0.05108335, 1.5041219e-06, 0.31057987, 1)
+texture = ExtResource("4_ne1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=213006626]
 position = Vector2(1208, 720)
