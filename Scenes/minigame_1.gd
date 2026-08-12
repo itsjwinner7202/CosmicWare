@@ -1,57 +1,45 @@
 extends Node2D
+
+const SFX_COIN = preload("res://Assets/coin.wav")
+const SFX_COIN_2 = preload("res://Assets/coin_2.wav")
+
 @onready var themed_timer: Node2D = $ThemedTimer 
-# ^^^ You dragged this in the scene by the way 
 
-
-
-var garlic_collected = 0 # just keeping track of garlic collected
-var timer_end = false # boolean (true or false) stating whether the timer ended
+var garlic_collected = 0 
+var timer_end = false 
 
 func _ready() -> void:
-
-		#Below you can see that I have a function that I named. I grab a 
-		#function from it that was created in it's script and use `await` to 
-		# tell the script to wait for a signal, or for when a function finshes
-
 	match Global.difficulty_index:
 		0:
-			await themed_timer.Timer(10.0) #accessing a function from this node
-			#after this is compeleted...
-			timer_end = true # now we're saying "oh ye you ran out of time"
+			await themed_timer.Timer(10.0) 
+			timer_end = true 
 				
 		1:
-			await themed_timer.Timer(7.0) #accessing a function from this node
-			#after this is compeleted...
-			timer_end = true # now we're saying "oh ye you ran out of time"
+			await themed_timer.Timer(7.0) 
+			timer_end = true 
 		
 		2:
-			await themed_timer.Timer(5.0) #accessing a function from this node
-			#after this is compeleted...
-			timer_end = true # now we're saying "oh ye you ran out of time"
-			
-		
+			await themed_timer.Timer(5.0) 
+			timer_end = true 
 
-
-func _process(delta: float) -> void: # running every frame brochacho
-	
-	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
-		if Global.minigames_done == 3: # we access a global script and see how many minigames have been compeleted
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
+func _process(delta: float) -> void: 
+	if garlic_collected == 3: 
+		if Global.minigames_done == 3: 
+			get_tree().change_scene_to_file("res://Scenes/done_screen.tscn") 
 		else:
-			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") # go back to the intermission scene
+			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") 
 	
-	if timer_end: # if the timer does end...
-		Global.minigames_done -=1 #go back a minigame
-		Global.lives -= 1 # lose ur lives
-		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") # back to intermission
-		
+	if timer_end: 
+		Global.minigames_done -= 1 
+		Global.lives -= 1 
+		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") 
 
-func garlic_collect() -> void: # cool function that you connect to those garlics
-	garlic_collected = garlic_collected +1
+func garlic_collect() -> void: 
+	garlic_collected = garlic_collected + 1
 	if garlic_collected <= 2 and garlic_collected >= 1:
-		$AudioStreamPlayer2D.stream = AudioStreamWAV.load_from_file("res://Assets/coin.wav")
+		$AudioStreamPlayer2D.stream = SFX_COIN
 		$AudioStreamPlayer2D.play()
 	elif garlic_collected == 3:
-		$AudioStreamPlayer2D.stream = AudioStreamWAV.load_from_file("res://Assets/coin_2.wav")
+		$AudioStreamPlayer2D.stream = SFX_COIN_2
 		$AudioStreamPlayer2D.play()
 	return

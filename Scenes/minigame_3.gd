@@ -1,4 +1,8 @@
 extends Node2D
+
+const SFX_LOSE = preload("res://Assets/sfx_lose.ogg")
+const SFX_LASER = preload("res://Assets/sfx_laser1.ogg")
+
 @onready var ships = 3
 @onready var is_hit: bool = false
 @onready var life1: TextureRect = $"HBoxContainer/Life1"
@@ -90,7 +94,7 @@ func handle_bump() -> void:
 		return
 
 	is_hit = true
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_lose.ogg")
+	$AudioStreamPlayer2D.stream = SFX_LOSE
 	$AudioStreamPlayer2D.play()
 	ships -= 1
 	shot = 0
@@ -128,35 +132,31 @@ func _on_area_2d_7_ship_bumped() -> void:
 func _on_area_2d_8_ship_bumped() -> void:
 	handle_bump()
 
+func play_laser_sfx() -> void:
+	shot += 1
+	$AudioStreamPlayer2D.stream = SFX_LASER
+	$AudioStreamPlayer2D.play()
+
 func _on_area_2d_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_2_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_3_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_4_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_5_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_6_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_7_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
+
 func _on_area_2d_8_meteor_bump() -> void:
-	shot += 1
-	$AudioStreamPlayer2D.stream = AudioStreamOggVorbis.load_from_file("res://Assets/sfx_laser1.ogg")
-	$AudioStreamPlayer2D.play()
+	play_laser_sfx()
